@@ -98,6 +98,11 @@ hr {
   width: 70%;
 }
 
+.earth {
+  width: 15%;
+  height: 15%;
+}
+
 .forecast {
   color: gray;
   text-align: left;
