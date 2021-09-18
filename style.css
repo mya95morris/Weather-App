@@ -1,0 +1,228 @@
+body {
+  color: #407088;
+  width: 650px;
+  margin: 100px auto;
+  border: none;
+  background-color: #66bfbf;
+  text-align: center;
+  font-family: "Urbanist", sans-serif;
+}
+
+body:hover {
+  background-color: #fff6f6;
+}
+
+footer {
+  font-size: 30px;
+}
+
+hr {
+  color: #83cee0;
+}
+
+.body {
+  background-color: #ecfffb;
+  border-radius: 40px;
+  border-color: #ecfffb;
+}
+
+.button {
+  display: inline;
+}
+
+.city {
+  font-size: 50px;
+  color: #1b335f;
+  text-align: left;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+}
+
+.cloudy {
+  color: #1b335f;
+  font-family: "Urbanist", sans-serif;
+}
+
+.dateTime {
+  text-align: left;
+  font-weight: 400;
+}
+
+.icon1 {
+  width: 50%;
+  margin: auto;
+  display: block;
+  filter: grayscale(90%);
+}
+.icon2 {
+  width: 50%;
+  margin: auto;
+  display: block;
+  filter: grayscale(90%);
+}
+
+.icon3 {
+  width: 50%;
+  display: block;
+  margin: auto;
+  filter: grayscale(90%);
+}
+.icon4 {
+  width: 50%;
+  margin: auto;
+  display: block;
+  filter: grayscale(90%);
+}
+.icon5 {
+  width: 50%;
+  margin: auto;
+  display: block;
+  filter: grayscale(90%);
+}
+.icon6 {
+  width: 50%;
+  display: block;
+  margin: auto;
+  filter: grayscale(90%);
+}
+.icon1:hover {
+  filter: hue-rotate(150deg) opacity(50%);
+  width: 70%;
+}
+.icon2:hover {
+  filter: hue-rotate(150deg) opacity(50%);
+  width: 70%;
+}
+.icon3:hover {
+  filter: hue-rotate(150deg) opacity(50%);
+  width: 70%;
+}
+.icon4:hover {
+  filter: hue-rotate(150deg) opacity(50%);
+  width: 70%;
+}
+.icon5:hover {
+  filter: hue-rotate(150deg) opacity(50%);
+  width: 70%;
+}
+.icon6:hover {
+  filter: hue-rotate(150deg) opacity(50%);
+  width: 70%;
+}
+
+.forecast {
+  color: gray;
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+.form-control {
+  background: #fff6f6;
+  color: white;
+  padding: 15px;
+  display: inline;
+  font-size: 16px;
+  height: 50px;
+  width: 70%;
+  margin-left: 10px;
+  border: none;
+}
+
+.form-control:focus {
+  background-color: #ffcbcb;
+  color: gray;
+}
+
+.icon {
+  width: 70%;
+}
+.icon:hover {
+  filter: hue-rotate(150deg) opacity(50%);
+}
+
+.info {
+}
+.openweather-current-icon {
+}
+
+.pin {
+  width: 10%;
+  display: block;
+  margin: 0 auto;
+}
+
+.pin:hover {
+  filter: hue-rotate(400deg);
+}
+
+.Precipitationetc {
+  text-align: right;
+  font-weight: 300;
+  font-size: 20px;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+  color: gray;
+}
+.rowpics {
+  text-align: center;
+}
+
+.searchbox {
+  display: inline;
+  width: 500px;
+}
+
+.temperature {
+  color: #1b335f;
+  text-align: left;
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  background-color: #fff6f6;
+}
+
+.text {
+  border-color: #fff6f6;
+  background-color: #fff6f6;
+}
+
+.week {
+  color: #005689;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 600;
+  font-family: "Urbanist", sans-serif;
+}
+
+#cel:hover {
+  color: #ffcbcb;
+  font-size: 40px;
+}
+
+#far:hover {
+  color: #ffcbcb;
+  font-size: 40px;
+}
+
+#temperature {
+  font-size: 40px;
+}
+#temperature:hover {
+  color: #ffcbcb;
+}
+
+#search {
+  background-color: #1b335f;
+  color: #fff6f6;
+  border: none;
+  padding: 15px;
+  height: 50px;
+  border-radius: 60px;
+  margin: auto;
+}
+
+#search:hover {
+  background-color: #ffcbcb;
+}

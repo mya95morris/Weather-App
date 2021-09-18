@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&family=Urbanist:ital,wght@0,100;0,200;0,300;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8" />
+  <script src="https://kit.fontawesome.com/e8538976f5.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <title>Weather</title>
+</head>
+
+<body>
+  <div class="container">
+
+    Data last updated: <span class=update></span>
+
+    <div class="card body">
+      <div class="card-body">
+        <h5 class="card-title city"> </h5>
+        <h5 class="card-title dateTime"><strong> </strong> </h5>
+        <div class="row">
+          <div class="col-6  hello">
+
+            <div class="card border">
+
+              <div class="card-body text">
+                <div class="row">
+                  <div class="col-sm">
+                    <h5 class="card-title"><span id="temperature"></span><span id="far">F</span>/<span id="cel">C</span></h5>
+                  </div>
+                  <div class="col-sm">
+                    <img src=src/icons/01d.png class="icon">
+
+                    <p class="card-text cloudy">Cloudy</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 info">
+            <p class="card-text Precipitationetc">
+              Humidity: <span class=humidity> </span>% </br>
+              Wind: <span class=wind> 4 </span> mph</br>
+              UV index:<span class=uv> 1</span> out of 10
+            </p>
+          </div>
+
+          <p class="forecast"> 7 day forecast</p>
+          <hr />
+        </div>
+      </div>
+      <div class="row week">
+        <div class="col-sm day1"> Tuesday</div>
+        <div class="col-sm day2">Wednesday</div>
+        <div class="col-sm day3"> Thursday </div>
+        <div class="col-sm day4"> Friday</div>
+        <div class="col-sm day5"> Saturday</div>
+        <div class="col-sm day6"> Sunday</div>
+      </div>
+
+      <div class="row pics">
+        <div class="col-sm "> <img class="day1 icon1" src="src/icons/01d.png" alt="">
+        </div>
+        <div class="col-sm "> <img class="day2 icon2" src="src/icons/01d.png" alt="">
+        </div>
+        <div class="col-sm"> <img class="day3 icon3" src="src/icons/02d.png" alt="">
+        </div>
+        <div class="col-sm"> <img class="day4 icon4" src="src/icons/03d.png" alt="">
+
+        </div>
+        <div class="col-sm "> <img class="day5 icon5" src="src/icons/09d.png" alt="">
+
+        </div>
+        <div class="col-sm ""> <img class=" day6 icon6" src="src/icons/11d.png" alt="">
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <form class="search-form">
+        <div class="mb-3 button">
+
+          <input type="text" class="form-control searchbox" placeholder="Enter a city" autofocus=on>
+
+        </div>
+
+
+        <button type="submit" class="btn btn-primary" id="search">Search</button> </br>
+        <img class="pin" src="https://media.giphy.com/media/2gklmxuA0rvDeRUUlg/giphy.gif" title="Current location">
+      </form>
+
+
+    </div>
+
+    <div>
+
+    </div>
+    <footer>time</footer>
+  </div>
+
+
+
+  <script src="weatherscript.js"></script>
+  </div>
+  </div>
+</body>
+
+</html>
