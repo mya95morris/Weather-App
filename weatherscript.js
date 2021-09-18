@@ -174,11 +174,32 @@ function tkyClick(event) {
   searchCity("Tokyo");
 }
 
+function kinClick(event) {
+  event.preventDefault();
+  searchCity("Kingston");
+}
+
+function mexClick(event) {
+  event.preventDefault();
+  searchCity("Mexico City");
+}
+function sinClick(event) {
+  event.preventDefault();
+  searchCity("Singapore");
+}
+function seoClick(event) {
+  event.preventDefault();
+  searchCity("Seoul");
+}
+
 document.querySelector(".ISB").addEventListener("click", isbClick);
 document.querySelector(".LDN").addEventListener("click", ldnClick);
 document.querySelector(".NYC").addEventListener("click", nycClick);
 document.querySelector(".TKY").addEventListener("click", tkyClick);
-
+document.querySelector(".KIN").addEventListener("click", kinClick);
+document.querySelector(".MEX").addEventListener("click", mexClick);
+document.querySelector(".SIN").addEventListener("click", sinClick);
+document.querySelector(".SEO").addEventListener("click", seoClick);
 
 
 searchCity("Dubai");

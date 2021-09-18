@@ -30,6 +30,8 @@ hr {
   background-color: #deedf0;
   border-radius: 40px;
   border-color: #deedf0;
+  display:block;
+  margin:auto;
 }
 
 .button {
@@ -44,11 +46,17 @@ hr {
   color: #ffcbcb;
 }
 
-.city,
-.city-2 {
+.city{
   font-size: 50px;
   color: #1b335f;
   text-align: left;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+}
+.city-2 {
+  font-size: 50px;
+  color: #1b335f;
+  text-align: center;
   font-family: "Urbanist", sans-serif;
   font-weight: 600;
 }
@@ -147,11 +155,20 @@ hr {
   filter: hue-rotate(400deg);
 }
 
-.Precipitationetc,
-.Precipitationetc-2 {
+.Precipitationetc {
   text-align: right;
   font-weight: 300;
   font-size: 20px;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+  color: gray;
+}
+
+.Precipitationetc-2 {
+  text-align: left;
+  font-weight: 300;
+  font-size: 15px;
   font-family: "Urbanist", sans-serif;
   font-weight: 100;
   font-style: italic;
@@ -179,6 +196,11 @@ hr {
 .text {
   border-color: #fff6f6;
   background-color: #fff6f6;
+}
+.text-2 {
+  border-color: #fff6f6;
+  background-color: #fff6f6;
+  text-align: center;
 }
 
 .week {
