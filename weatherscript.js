@@ -128,3 +128,57 @@ function celsiusClick() {
 }
 
 document.querySelector("#cel").addEventListener("click", celsiusClick);
+
+
+//cities//
+
+//NYC//
+function showInfoCity(response) {
+  document.querySelector(".city-2").innerHTML = response.data.name;
+  document.querySelector(".cloudy-2").innerHTML =
+    response.data.weather[0].description;
+  document.querySelector(".humidity-2").innerHTML = response.data.main.humidity;
+  document.querySelector(".wind-2").innerHTML = response.data.wind.speed;
+  document.querySelector("#temperature-2").innerHTML = `${Math.round(
+    response.data.main.temp
+  )}°`;
+  document
+    .querySelector(".icon-2")
+    .setAttribute("src", `src/icons/${response.data.weather[0].icon}.png`);
+}
+
+function searchCity(city) {
+  let apiKey = "e76cd8c37745df31c6e794ca3e2defbc";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  document.querySelector(".city-2").innerHTML = `${city}`
+  axios.get(apiUrl).then(showInfoCity);
+}
+
+function isbClick(event) {
+  event.preventDefault();
+  searchCity("Istanbul");
+}
+
+function ldnClick(event) {
+  event.preventDefault();
+  searchCity("London");
+}
+
+function nycClick(event) {
+  event.preventDefault();
+  searchCity("New York");
+}
+
+function tkyClick(event) {
+  event.preventDefault();
+  searchCity("Tokyo");
+}
+
+document.querySelector(".ISB").addEventListener("click", isbClick);
+document.querySelector(".LDN").addEventListener("click", ldnClick);
+document.querySelector(".NYC").addEventListener("click", nycClick);
+document.querySelector(".TKY").addEventListener("click", tkyClick);
+
+
+
+searchCity("Dubai");

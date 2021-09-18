@@ -26,11 +26,26 @@ hr {
   border-color: #ecfffb;
 }
 
+.body-2 {
+  background-color: #deedf0;
+  border-radius: 40px;
+  border-color: #deedf0;
+}
+
 .button {
   display: inline;
 }
 
-.city {
+.btn {
+  color: #1b335f;
+}
+
+.btn:hover {
+  color: #ffcbcb;
+}
+
+.city,
+.city-2 {
   font-size: 50px;
   color: #1b335f;
   text-align: left;
@@ -38,7 +53,8 @@ hr {
   font-weight: 600;
 }
 
-.cloudy {
+.cloudy,
+.cloudy-2 {
   color: #1b335f;
   font-family: "Urbanist", sans-serif;
 }
@@ -48,64 +64,36 @@ hr {
   font-weight: 400;
 }
 
-.icon1 {
-  width: 50%;
-  margin: auto;
-  display: block;
-  filter: grayscale(90%);
-}
-.icon2 {
+.icon1,
+.icon1-2,
+.icon2,
+.icon2-2,
+.icon3,
+.icon3-2,
+.icon4,
+.icon4-2,
+.icon5,
+.icon5-2,
+.icon6,
+.icon6-2 {
   width: 50%;
   margin: auto;
   display: block;
   filter: grayscale(90%);
 }
 
-.icon3 {
-  width: 50%;
-  display: block;
-  margin: auto;
-  filter: grayscale(90%);
-}
-.icon4 {
-  width: 50%;
-  margin: auto;
-  display: block;
-  filter: grayscale(90%);
-}
-.icon5 {
-  width: 50%;
-  margin: auto;
-  display: block;
-  filter: grayscale(90%);
-}
-.icon6 {
-  width: 50%;
-  display: block;
-  margin: auto;
-  filter: grayscale(90%);
-}
-.icon1:hover {
-  filter: hue-rotate(150deg) opacity(50%);
-  width: 70%;
-}
-.icon2:hover {
-  filter: hue-rotate(150deg) opacity(50%);
-  width: 70%;
-}
-.icon3:hover {
-  filter: hue-rotate(150deg) opacity(50%);
-  width: 70%;
-}
-.icon4:hover {
-  filter: hue-rotate(150deg) opacity(50%);
-  width: 70%;
-}
-.icon5:hover {
-  filter: hue-rotate(150deg) opacity(50%);
-  width: 70%;
-}
-.icon6:hover {
+.icon1:hover,
+.icon1-2:hover,
+.icon2:hover,
+.icon2-2:hover,
+.icon3:hover,
+.icon3-2:hover,
+.icon4:hover,
+.icon4-2:hover,
+.icon5:hover,
+.icon5-2:hover,
+.icon6:hover,
+.icon6-2:hover {
   filter: hue-rotate(150deg) opacity(50%);
   width: 70%;
 }
@@ -134,16 +122,14 @@ hr {
   color: gray;
 }
 
-.icon {
+.icon,
+.icon-2 {
   width: 70%;
 }
-.icon:hover {
-  filter: hue-rotate(150deg) opacity(50%);
-}
 
-.info {
-}
-.openweather-current-icon {
+.icon:hover,
+.icon-2:hover {
+  filter: hue-rotate(150deg) opacity(50%);
 }
 
 .pin {
@@ -156,7 +142,8 @@ hr {
   filter: hue-rotate(400deg);
 }
 
-.Precipitationetc {
+.Precipitationetc,
+.Precipitationetc-2 {
   text-align: right;
   font-weight: 300;
   font-size: 20px;
@@ -165,13 +152,14 @@ hr {
   font-style: italic;
   color: gray;
 }
+
 .rowpics {
   text-align: center;
 }
 
 .searchbox {
   display: inline;
-  width: 500px;
+  width: 300px;
 }
 
 .temperature {
@@ -196,20 +184,25 @@ hr {
   font-family: "Urbanist", sans-serif;
 }
 
-#cel:hover {
+#cel:hover,
+#cel-2:hover {
   color: #ffcbcb;
   font-size: 40px;
 }
 
-#far:hover {
+#far:hover,
+#far-2:hover {
   color: #ffcbcb;
   font-size: 40px;
 }
 
-#temperature {
+#temperature,
+#temperature-2 {
   font-size: 40px;
 }
-#temperature:hover {
+
+#temperature:hover,
+#temperature-2:hover {
   color: #ffcbcb;
 }
 
