@@ -1,11 +1,11 @@
 body {
-  color: #407088;
-  width: 650px;
-  margin: 100px auto;
-  border: none;
   background-color: #66bfbf;
-  text-align: center;
+  border: none;
+  color: #407088;
   font-family: "Urbanist", sans-serif;
+  margin: 100px auto;
+  text-align: center;
+  width: 650px;
 }
 
 body:hover {
@@ -26,18 +26,14 @@ h4 {
 
 .body {
   background-color: #ecfffb;
-  border-radius: 40px;
   border-color: #ecfffb;
+  border-radius: 40px;
 }
 
 .body-2 {
   background-color: #deedf0;
-  border-radius: 40px;
   border-color: #deedf0;
-}
-
-.button {
-  display: inline;
+  border-radius: 40px;
 }
 
 .btn {
@@ -46,6 +42,10 @@ h4 {
 
 .btn:hover {
   color: #ffcbcb;
+}
+
+.button {
+  display: inline;
 }
 
 .city {
@@ -57,32 +57,80 @@ h4 {
 }
 
 .city-2 {
-  font-size: 45px;
   color: #1b335f;
-  text-align: center;
   font-family: "Urbanist", sans-serif;
+  font-size: 45px;
   font-weight: 600;
+  margin: auto;
+  text-align: center;
 }
 
 .cloudy,
 .cloudy-2 {
   color: #1b335f;
   font-family: "Urbanist", sans-serif;
-  margin-right: 14px;
+  text-align: center;
+}
 
+.cloudy-2 {
+  margin-right: 10px;
+  text-align: right;
 }
 
 .dateTime {
-  text-align: left;
   font-weight: 400;
+  text-align: left;
 }
-.github{
-  font-size: 15px;
+
+.earth {
+  height: 15%;
+  width: 15%;
+}
+
+.forecast {
+  color: gray;
+  margin-bottom: 0;
+  margin-top: 30px;
+  text-align: left;
+}
+
+.form-control {
+  background: #fff6f6;
+  border: none;
+  color: white;
+  display: inline;
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 15px;
+  width: 70%;
+}
+
+.form-control:focus {
+  background-color: #ffcbcb;
+  color: gray;
+}
+
+.github {
   color: #ffcbcb;
+  font-size: 15px;
   text-decoration: none;
 }
-.github:hover{
+
+.github:hover {
   color: white;
+}
+
+.icon {
+  width: 70%;
+}
+
+.icon-2 {
+  width: 40%;
+}
+
+.icon:hover,
+.icon-2:hover {
+  filter: hue-rotate(150deg) opacity(50%);
 }
 
 .icon1,
@@ -97,8 +145,8 @@ h4 {
 .icon5-2,
 .icon6,
 .icon6-2 {
-  width: 50%;
   filter: grayscale(90%);
+  width: 50%;
 }
 
 .icon1:hover,
@@ -117,54 +165,10 @@ h4 {
   width: 70%;
 }
 
-.earth {
-  width: 15%;
-  height: 15%;
-}
-
-.forecast {
-  color: gray;
-  text-align: left;
-  margin-top: 30px;
-  margin-bottom: 0;
-}
-
-.form-control {
-  background: #fff6f6;
-  color: white;
-  padding: 15px;
-  display: inline;
-  font-size: 16px;
-  height: 50px;
-  width: 70%;
-  margin-left: 10px;
-  border: none;
-}
-
-.form-control:focus {
-  background-color: #ffcbcb;
-  color: gray;
-}
-
-.icon,
-  {
-  width: 70%;
-}
-
-.icon-2 {
-  width: 40%;
-
-}
-
-.icon:hover,
-.icon-2:hover {
-  filter: hue-rotate(150deg) opacity(50%);
-}
-
 .pin {
-  width: 10%;
   display: block;
   margin: 0 auto;
+  width: 10%;
 }
 
 .pin:hover {
@@ -172,60 +176,55 @@ h4 {
 }
 
 .Precipitationetc {
-  text-align: right;
-  font-weight: 300;
-  font-size: 20px;
-  font-family: "Urbanist", sans-serif;
-  font-weight: 100;
-  font-style: italic;
   color: gray;
+  font-family: "Urbanist", sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 100;
+  font-weight: 300;
+  text-align: right;
 }
 
 .Precipitationetc-2 {
-  text-align: left;
-  font-weight: 300;
-  font-size: 15px;
-  font-family: "Urbanist", sans-serif;
-  font-weight: 100;
-  font-style: italic;
   color: gray;
-}
-
-.rowpics {
-  text-align: center;
+  font-family: "Urbanist", sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 100;
+  font-weight: 300;
+  text-align: left;
 }
 
 .searchbox {
   display: inline;
-  width: 300px;
 }
 
 .temperature {
+  background-color: #fff6f6;
   color: #1b335f;
-  text-align: left;
   font-size: 25px;
   font-weight: 600;
   margin-top: 1.5rem;
-  background-color: #fff6f6;
+  text-align: left;
 }
 
 .text {
-  border-color: #fff6f6;
   background-color: #fff6f6;
+  border-color: #fff6f6;
 }
 
 .text-2 {
-  border-color: #fff6f6;
   background-color: #fff6f6;
+  border-color: #fff6f6;
   text-align: center;
 }
 
 .week {
   color: #005689;
-  font-size: 15px;
-  text-align: center;
-  font-weight: 600;
   font-family: "Urbanist", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
 }
 
 .world-icons {
@@ -234,8 +233,8 @@ h4 {
 
 #cel,
 #cel-2 {
-  text-decoration: none;
   color: #1b335f;
+  text-decoration: none;
 }
 
 #cel:hover,
@@ -246,14 +245,28 @@ h4 {
 
 #far,
 #far-2 {
-  text-decoration: none;
   color: #1b335f;
+  text-decoration: none;
 }
 
 #far:hover,
 #far-2:hover {
   color: #ffcbcb;
   font-size: 40px;
+}
+
+#search {
+  background-color: #1b335f;
+  border-radius: 60px;
+  border: none;
+  color: #fff6f6;
+  height: 50px;
+  margin: auto;
+  padding: 15px;
+}
+
+#search:hover {
+  background-color: #ffcbcb;
 }
 
 #temperature {
@@ -267,18 +280,4 @@ h4 {
 #temperature:hover,
 #temperature-2:hover {
   color: #ffcbcb;
-}
-
-#search {
-  background-color: #1b335f;
-  color: #fff6f6;
-  border: none;
-  padding: 15px;
-  height: 50px;
-  border-radius: 60px;
-  margin: auto;
-}
-
-#search:hover {
-  background-color: #ffcbcb;
 }
