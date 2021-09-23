@@ -1,6 +1,7 @@
 //Time and date functions//
 
 function getDate(date) {
+
   let days = [
     "Sunday",
     "Monday",
@@ -24,13 +25,20 @@ function getDate(date) {
     "November",
     "December"
   ];
-
-  return `<strong>${days[date.getDay()]}</strong>, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  let currentYear = date.getFullYear();
+  let currentDay = days[date.getDay()];
+  let currentMonth = months[date.getMonth()];
+  let currentDate = date.getDate();
+  let formattedDate = `<strong>${currentDay}</strong>, ${currentMonth} ${currentDate}, ${currentYear}`;
+  return formattedDate;
 }
 
 function getTime(date) {
-  let currentHour = date.getHours();
-  let currentMinutes = date.getMinutes();
+  let currentTime = new Date();
+  let dateTime = document.querySelector(".dateTime");
+  dateTime.innerHTML = getDate(currentTime);
+  let clockTime = document.querySelector("footer");
+  clockTime.innerHTML = getTime(currentTime);
   if (currentMinutes < 10) {
     return `${currentHour}:0${currentMinutes}`;
   }
@@ -207,8 +215,8 @@ document.querySelector("#cel-2").addEventListener("click", celsiusClickWorld);
 
 function formatForecastDay(timestamp) {
   let date = new Date(timestamp * 1000);
-  let day =
-    let days = [
+  let day = date.getDay()
+  let day =[
       "Sunday",
       "Monday",
       "Tuesday",
@@ -229,13 +237,13 @@ function displayForecast(response) {
         </div>
         </div>
         `;
-    }
+    }}}
     document.querySelector(".weatherForecast").innerHTML = forecastHTML + `</div>`;
-  }
 
-  function getForecast(coordinates) {
-    console.log(coordinates);
-    let apiKey = "e76cd8c37745df31c6e794ca3e2defbc";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
-    axios.get(apiUrl).then(displayForecast);
-  }
+
+    function getForecast(coordinates) {
+      console.log(coordinates);
+      let apiKey = "e76cd8c37745df31c6e794ca3e2defbc";
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
+      axios.get(apiUrl).then(displayForecast);
+    }
