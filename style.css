@@ -20,6 +20,10 @@ hr {
   color: #83cee0;
 }
 
+h4 {
+  text-align: left;
+}
+
 .body {
   background-color: #ecfffb;
   border-radius: 40px;
@@ -44,15 +48,16 @@ hr {
   color: #ffcbcb;
 }
 
-.city{
+.city {
   font-size: 50px;
   color: #1b335f;
   text-align: left;
   font-family: "Urbanist", sans-serif;
   font-weight: 600;
 }
+
 .city-2 {
-  font-size: 50px;
+  font-size: 45px;
   color: #1b335f;
   text-align: center;
   font-family: "Urbanist", sans-serif;
@@ -63,11 +68,21 @@ hr {
 .cloudy-2 {
   color: #1b335f;
   font-family: "Urbanist", sans-serif;
+  margin-right: 14px;
+
 }
 
 .dateTime {
   text-align: left;
   font-weight: 400;
+}
+.github{
+  font-size: 15px;
+  color: #ffcbcb;
+  text-decoration: none;
+}
+.github:hover{
+  color: white;
 }
 
 .icon1,
@@ -83,7 +98,6 @@ hr {
 .icon6,
 .icon6-2 {
   width: 50%;
-
   filter: grayscale(90%);
 }
 
@@ -133,8 +147,13 @@ hr {
 }
 
 .icon,
-.icon-2 {
+  {
   width: 70%;
+}
+
+.icon-2 {
+  width: 40%;
+
 }
 
 .icon:hover,
@@ -194,6 +213,7 @@ hr {
   border-color: #fff6f6;
   background-color: #fff6f6;
 }
+
 .text-2 {
   border-color: #fff6f6;
   background-color: #fff6f6;
@@ -208,10 +228,26 @@ hr {
   font-family: "Urbanist", sans-serif;
 }
 
+.world-icons {
+  text-align: right;
+}
+
+#cel,
+#cel-2 {
+  text-decoration: none;
+  color: #1b335f;
+}
+
 #cel:hover,
 #cel-2:hover {
   color: #ffcbcb;
   font-size: 40px;
+}
+
+#far,
+#far-2 {
+  text-decoration: none;
+  color: #1b335f;
 }
 
 #far:hover,
@@ -220,9 +256,12 @@ hr {
   font-size: 40px;
 }
 
-#temperature,
-#temperature-2 {
+#temperature {
   font-size: 40px;
+}
+
+#temperature-2 {
+  font-size: 30px;
 }
 
 #temperature:hover,

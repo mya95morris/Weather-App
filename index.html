@@ -30,7 +30,7 @@
               <div class="card-body text">
                 <div class="row">
                   <div class="col-sm">
-                    <h5 class="card-title"><span id="temperature"></span><span id="far">F</span>/<span id="cel">C</span></h5>
+                    <h5 class="card-title"><span id="temperature"></span><a href="#" id="far">F</a>/<a href="#" id="cel">C</a></h5>
                   </div>
                   <div class="col-sm">
                     <img src=src/icons/01d.png class="icon">
@@ -75,7 +75,7 @@
         <div class="col-sm "> <img class="day5 icon5" src="src/icons/09d.png" alt="">
 
         </div>
-        <div class="col-sm ""> <img class=" day6 icon6" src="src/icons/11d.png" alt="">
+        <div class="col-sm "> <img class="day6 icon6" src="src/icons/11d.png" alt="">
         </div>
       </div>
       <br />
@@ -121,19 +121,21 @@
 
 
         </div>
-        <h5 class="card-title city-2"> </h5>
+
 
         <div class="row">
-          <div class="col-6  hello">
+          <div class="col  hello">
 
             <div class="card border">
 
 
               <div class="card-body text-2">
                 <div class="row">
+                  <h5 class="card-title city-2"> </h5>
                   <div class="col-sm">
-                    <h5 class="card-title"><span id="temperature-2"></span><span id="far-2">F</span>/<span id="cel-2">C</span></h5>
+                    <h4 class="card-title"><span id="temperature-2"></span><a href="#" id="far-2">F</a>/<a href="#" id="cel-2">C</a></h4>
                     <div class="col-sm info">
+
                       <p class="card-text Precipitationetc-2">
                         Humidity: <span class=humidity-2> </span>% </br>
                         Wind: <span class=wind-2> 4 </span> mph</br>
@@ -141,10 +143,24 @@
                       </p>
                     </div>
                   </div>
-                  <div class="col-sm">
+                  <div class="col world-icons">
                     <img src=src/icons/01d.png class="icon-2">
-
                     <p class="card-text cloudy-2">Cloudy</p>
+                    </br>
+</div>
+<div class="row pics">
+  <div class="col-2 "> <img class="day1 icon1-2" src="src/icons/01d.png" alt="">
+  </div>
+  <div class="col-2 "> <img class="day2 icon2-2" src="src/icons/01d.png" alt="">
+                    </div>
+                    <div class="col-2"> <img class="day3 icon3-2" src="src/icons/02d.png" alt="">
+                    </div>
+                    <div class="col-2"> <img class="day4 icon4-2" src="src/icons/03d.png" alt="">
+                    </div>
+                    <div class="col-2 "> <img class="day5 icon5-2" src="src/icons/09d.png" alt="">
+                    </div>
+                    <div class="col-2"> <img class=" day6 icon6-2" src="src/icons/11d.png" alt="">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -153,37 +169,24 @@
 
         </div>
       </div>
-      <div class="row pics">
-        <div class="col-2 "> <img class="day1 icon1-2" src="src/icons/01d.png" alt="">
-        </div>
-        <div class="col-2 "> <img class="day2 icon2-2" src="src/icons/01d.png" alt="">
-        </div>
-        <div class="col-2"> <img class="day3 icon3-2" src="src/icons/02d.png" alt="">
-        </div>
-        <div class="col-2"> <img class="day4 icon4-2" src="src/icons/03d.png" alt="">
-        </div>
-        <div class="col-2 "> <img class="day5 icon5-2" src="src/icons/09d.png" alt="">
-        </div>
-        <div class="col-2 ""> <img class=" day6 icon6-2" src="src/icons/11d.png" alt="">
-      </div>
-    </div>
-    </br>
-    </br>
 
-    <div class="row cities">
-      <div class="col-sm "> <button type="submit" class="btn KIN" title="Display the weather in Kingston">Kingston</button> </br>
-      </div>
-      <div class="col-sm "><button type="submit" class="btn SIN" title="Display the weather in Singapore">Singapore</button> </br>
-      </div>
-      <div class="col-sm"> <button type="submit" class="btn MEX" title="Display the weather in Mexico City">Mexico City</button> </br>
-      </div>
-      <div class="col-sm"> <button type="submit" class="btn SEO" title="Display the weather in Seoul">Seoul</button> </br>
-      </div>
+      <div class="row cities">
+        <div class="col-sm "> <button type="submit" class="btn KIN" title="Display the weather in Kingston">Kingston</button> </br>
+        </div>
+        <div class="col-sm "><button type="submit" class="btn SIN" title="Display the weather in Singapore">Singapore</button> </br>
+        </div>
+        <div class="col-sm"> <button type="submit" class="btn MEX" title="Display the weather in Mexico City">Mexico City</button> </br>
+        </div>
+        <div class="col-sm"> <button type="submit" class="btn SEO" title="Display the weather in Seoul">Seoul</button> </br>
+        </div>
+          </div>
+</div>
+<footer class="github">
+  <a href="https://github.com/mya95morris/Weather-App" class= "github">Open source code</a> by <a href="https://github.com/mya95morris/"  class="github">Mya.</a>
+</footer>
+        <script src="weatherscript.js"></script>
 
 
-      <script src="weatherscript.js"></script>
-    </div>
-  </div>
 </body>
 
 </html>

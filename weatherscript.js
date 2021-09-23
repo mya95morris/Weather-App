@@ -58,6 +58,7 @@ function showInfo(response) {
   document.querySelector("#temperature").innerHTML = `${Math.round(
     response.data.main.temp
   )}°`;
+  fahrenheitTemperature= response.data.main.temp;
   document
     .querySelector("img")
     .setAttribute("src", `src/icons/${response.data.weather[0].icon}.png`);
@@ -97,42 +98,25 @@ function getCurrentLocation(event) {
 
 document.querySelector(".pin").addEventListener("click", getCurrentLocation);
 
-// Temperature conversion //
+// Temperature conversion current //
+let fahrenheitTemperature = null;
 
-function showFar(response) {
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+function fahrenheitClick(event) {
+  event.preventDefault();
+  document.querySelector("#temperature").innerHTML = `${Math.round(fahrenheitTemperature)}°`;
 }
-
-function fahrenheitClick() {
-  let city = document.querySelector(".city");
-  let apiKey = "e76cd8c37745df31c6e794ca3e2defbc";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-  axios.get(apiUrl).then(showFar);
-}
-
 document.querySelector("#far").addEventListener("click", fahrenheitClick);
 
-function showCel(response) {
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
-}
-
-function celsiusClick() {
-  let city = document.querySelector(".city");
-  let apiKey = "e76cd8c37745df31c6e794ca3e2defbc";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showCel);
+function celsiusClick(event) {
+  event.preventDefault();
+  let celsiusTemperature = (fahrenheitTemperature - 32)*5/9;
+  document.querySelector("#temperature").innerHTML = `${Math.round(celsiusTemperature)}°`;
 }
 
 document.querySelector("#cel").addEventListener("click", celsiusClick);
 
 
-//cities//
-
-//NYC//
+//World cities//
 function showInfoCity(response) {
   document.querySelector(".city-2").innerHTML = response.data.name;
   document.querySelector(".cloudy-2").innerHTML =
@@ -142,6 +126,7 @@ function showInfoCity(response) {
   document.querySelector("#temperature-2").innerHTML = `${Math.round(
     response.data.main.temp
   )}°`;
+  fahrenheitTemperatureWorld = response.data.main.temp;
   document
     .querySelector(".icon-2")
     .setAttribute("src", `src/icons/${response.data.weather[0].icon}.png`);
@@ -183,10 +168,12 @@ function mexClick(event) {
   event.preventDefault();
   searchCity("Mexico City");
 }
+
 function sinClick(event) {
   event.preventDefault();
   searchCity("Singapore");
 }
+
 function seoClick(event) {
   event.preventDefault();
   searchCity("Seoul");
@@ -203,3 +190,20 @@ document.querySelector(".SEO").addEventListener("click", seoClick);
 
 
 searchCity("Dubai");
+
+//temperature conversion world//
+let fahrenheitTemperatureWorld = null;
+
+function fahrenheitClickWorld(event) {
+  event.preventDefault();
+  document.querySelector("#temperature-2").innerHTML = `${Math.round(fahrenheitTemperatureWorld)}°`;
+}
+document.querySelector("#far-2").addEventListener("click", fahrenheitClickWorld);
+
+function celsiusClickWorld(event) {
+  event.preventDefault();
+  let celsiusTemperatureWorld = (fahrenheitTemperatureWorld - 32)*5/9;
+  document.querySelector("#temperature-2").innerHTML = `${Math.round(celsiusTemperatureWorld)}°`;
+}
+
+document.querySelector("#cel-2").addEventListener("click", celsiusClickWorld);
