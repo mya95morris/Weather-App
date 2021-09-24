@@ -177,28 +177,32 @@ function formatForecastDay(timestamp) {
   ];
   return days[day];
 }
-
 function displayForecast(response) {
+  let forecastElement = document.querySelector(".weatherForecast");
   let forecastHTML = `<div class="row week">`;
-  response.data.daily.forEach(function(forecastDay, index) {
+  response.data.daily.forEach(function (forecastDay, index) {
     if (index < 6) {
-      forecastHTML += `<div class="col-sm day1"> ${formatForecastDay(forecastDay.dt)}
-      <img class="day1 icon1" src="src/icons/${forecastDay.weather[0].icon}.png" alt="">
+      forecastHTML += `<div class="col-sm day1"> ${formatForecastDay(
+        forecastDay.dt
+      )}
+      <img class="day1 icon1" src="src/icons/${
+        forecastDay.weather[0].icon
+      }.png" alt="">
         </div>
         `;
     }
   });
+
+  forecastHTML += "</div>";
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "e76cd8c37745df31c6e794ca3e2defbc";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
 }
-
-
-
 
 
 
