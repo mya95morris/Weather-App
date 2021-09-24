@@ -15,18 +15,14 @@
 
 <body>
   <div class="container">
-
     Data last updated: <span class=update></span>
-
     <div class="card body">
       <div class="card-body">
         <h5 class="card-title city"> </h5>
         <h5 class="card-title dateTime"><strong> </strong> </h5>
         <div class="row">
           <div class="col-6  hello">
-
             <div class="card border">
-
               <div class="card-body text">
                 <div class="row">
                   <div class="col-sm">
@@ -34,7 +30,6 @@
                   </div>
                   <div class="col-sm">
                     <img src=src/icons/01d.png class="icon">
-
                     <p class="card-text cloudy">Cloudy</p>
                   </div>
                 </div>
@@ -45,69 +40,44 @@
             <p class="card-text Precipitationetc">
               Humidity: <span class=humidity> </span>% </br>
               Wind: <span class=wind> 4 </span> mph</br>
-              UV index:<span class=uv> 1</span> out of 10
+              Feels like: <span class=feels> 4</span></br>
+              Low: <span class="min"> 25</span><a href="#" class="fmin">F</a>/<a href="#" class="cmin">C</a> High: <span class="max">34</span><a href="#" class="fmax">F</a>/<a href="#" class="cmax">C</a>
             </p>
           </div>
-
           <p class="forecast"> 7 day forecast</p>
           <hr />
         </div>
       </div>
       <div class="weatherForecast">
-
         <div class="row week">
-          <div class="col-sm day1"> Tuesday <div class="col-sm "> 18 <img class="day1 icon1" src="src/icons/01d.png" alt="">
-            </div>
+          <div class="col-sm day1"> Tuesday <img class="day1 icon1" src="src/icons/01d.png" alt="">
           </div>
-          <div class="col-sm day2">Wednesday<div class="col-sm "> 20 <img class="day2 icon2" src="src/icons/01d.png" alt="">
-            </div>
+          <div class="col-sm day2">Wednesday <img class="day2 icon2" src="src/icons/01d.png" alt="">
           </div>
-          <div class="col-sm day3"> Thursday <div class="col-sm"> 13 <img class="day3 icon3" src="src/icons/02d.png" alt="">
-            </div>
+          <div class="col-sm day3"> Thursday <img class="day3 icon3" src="src/icons/02d.png" alt="">
           </div>
-          <div class="col-sm day4"> Friday
-            <div class="col-sm"> 14 <img class="day4 icon4" src="src/icons/03d.png" alt="">
-            </div>
+          <div class="col-sm day4"> Friday <img class="day4 icon4" src="src/icons/03d.png" alt="">
           </div>
-          <div class="col-sm day5"> Saturday
-            <div class="col-sm "> 15 <img class="day5 icon5" src="src/icons/09d.png" alt="">
-
-            </div>
+          <div class="col-sm day5"> Saturday<img class="day5 icon5" src="src/icons/09d.png" alt="">
           </div>
-          <div class="col-sm day6"> Sunday <div class="col-sm "> 16 <img class="day6 icon6" src="src/icons/11d.png" alt="">
-            </div>
+          <div class="col-sm day6"> Sunday <img class="day6 icon6" src="src/icons/11d.png" alt="">
           </div>
         </div>
-
+        <br />
+        <br />
+        <form class="search-form">
+          <div class="mb-3 button">
+            <input type="text" class="form-control searchbox" placeholder="Enter a city" autofocus=on>
+          </div>
+          <button type="submit" class="btn btn-primary" id="search">Search</button> </br>
+          <img class="pin" src="https://media.giphy.com/media/2gklmxuA0rvDeRUUlg/giphy.gif" title="Current location">
+        </form>
       </div>
-      <br />
-      <br />
-
-      <form class="search-form">
-        <div class="mb-3 button">
-
-          <input type="text" class="form-control searchbox" placeholder="Enter a city" autofocus=on>
-
-        </div>
-
-
-        <button type="submit" class="btn btn-primary" id="search">Search</button> </br>
-        <img class="pin" src="https://media.giphy.com/media/2gklmxuA0rvDeRUUlg/giphy.gif" title="Current location">
-      </form>
-
-
-    </div>
-
-    <div>
-
     </div>
     <footer>time</footer>
   </div>
   <!-- cities weather-->
   <div class="container">
-
-
-
     <div class="card body-2">
       <div class="card-body">
         <img class="earth" src="https://media.giphy.com/media/M9NjeVkSmuZOo3meWl/giphy.gif" />
@@ -120,28 +90,19 @@
           </div>
           <div class="col-sm"> <button type="submit" class="btn TKY" title="Display the weather in Tokyo">Tokyo</button> </br>
           </div>
-
-
         </div>
-
-
         <div class="row">
           <div class="col  hello">
-
             <div class="card border">
-
-
               <div class="card-body text-2">
                 <div class="row">
-
                   <div class="col-sm">
                     <h4 class="card-title"><span id="temperature-2"></span><a href="#" id="far-2">F</a>/<a href="#" id="cel-2">C</a></h4>
                     <div class="col-sm info">
-
                       <p class="card-text Precipitationetc-2">
                         Humidity: <span class=humidity-2> </span>% </br>
                         Wind: <span class=wind-2> 4 </span> mph</br>
-                        UV index:<span class=uv-2> 1</span> out of 10
+                        Feels like: <span class=feelsWorld> 4</span>
                       </p>
                     </div>
                   </div>
@@ -151,9 +112,14 @@
                   <div class="col-sm world-icons">
                     <img src=src/icons/01d.png class="icon-2">
                     <p class="card-text cloudy-2">Cloudy</p>
+                    <p class="minmaxworld">
+                      Low: <span class="minworld"> 25</span><a href="#" class="fminworld">F</a>/<a href="#" class="cminworld">C</a> High: <span class="maxworld">34</span><a href="#" class="fmaxworld">F</a>/<a href="#" class="cmaxworld">C</a>
+                    </p>
+                    </p>
                     </br>
                   </div>
                   </br>
+                  <hr>
                   <div class="row pics weatherForecast2">
                     <div class="col-2 "> <img class="day1 icon1-2" src="src/icons/01d.png" alt="">
                     </div>
@@ -172,10 +138,8 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
-
       <div class="row cities">
         <div class="col-sm "> <button type="submit" class="btn KIN" title="Display the weather in Kingston">Kingston</button> </br>
         </div>
@@ -191,8 +155,6 @@
       <a href="https://github.com/mya95morris/Weather-App" class="github">Open source code</a> by <a href="https://github.com/mya95morris/" class="github">Mya.</a>
     </footer>
     <script src="weatherscript.js"></script>
-
-
 </body>
 
 </html>

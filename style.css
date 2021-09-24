@@ -49,11 +49,11 @@ h4 {
 }
 
 .city {
-  font-size: 50px;
   color: #1b335f;
-  text-align: left;
   font-family: "Urbanist", sans-serif;
+  font-size: 50px;
   font-weight: 600;
+  text-align: left;
 }
 
 .city-2 {
@@ -73,6 +73,7 @@ h4 {
 }
 
 .cloudy-2 {
+  margin-bottom: 0;
   margin-right: 10px;
   text-align: right;
 }
@@ -85,6 +86,44 @@ h4 {
 .earth {
   height: 15%;
   width: 15%;
+}
+
+.fmin,
+.fmax,
+.cmin,
+.cmax {
+  color: #1b335f;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.fminworld,
+.fmaxworld,
+.cminworld,
+.cmaxworld {
+  color: #1b335f;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.fmin:hover,
+.fmax:hover,
+.cmin:hover,
+.cmax:hover {
+
+  color: #ffcbcb;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.fminworld:hover,
+.fmaxworld:hover,
+.cminworld:hover,
+.cmaxworld:hover {
+
+  color: #ffcbcb;
+  font-size: 15px;
+  text-decoration: none;
 }
 
 .forecast {
@@ -165,6 +204,20 @@ h4 {
   width: 70%;
 }
 
+.minmax,
+.minmaxworld {
+  color: gray;
+  margin-top: 0;
+}
+
+.min,
+.minworld,
+.max,
+.maxworld {
+  color: #ffcbcb;
+  font-weight: 300;
+}
+
 .pin {
   display: block;
   margin: 0 auto;
@@ -180,7 +233,6 @@ h4 {
   font-family: "Urbanist", sans-serif;
   font-size: 20px;
   font-style: italic;
-  font-weight: 100;
   font-weight: 300;
   text-align: right;
 }
@@ -190,7 +242,6 @@ h4 {
   font-family: "Urbanist", sans-serif;
   font-size: 15px;
   font-style: italic;
-  font-weight: 100;
   font-weight: 300;
   text-align: left;
 }

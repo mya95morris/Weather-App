@@ -33,17 +33,19 @@ function getDate(date) {
   return formattedDate;
 }
 
-function getTime(date) {
-  let currentTime = new Date();
-  let dateTime = document.querySelector(".dateTime");
-  dateTime.innerHTML = getDate(currentTime);
-  let clockTime = document.querySelector("footer");
-  clockTime.innerHTML = getTime(currentTime);
-  if (currentMinutes < 10) {
-    return `${currentHour}:0${currentMinutes}`;
+function getTime(timestamp) {
+  let currentTime = new Date(timestamp);
+
+  let currentHour = currentTime.getHours();
+  if (currentHour < 10) {
+    currentHour = `0${currentHour}`;
   }
-  let time = `${currentHour}:${currentMinutes}`;
-  return time;
+
+  let currentMinutes = currentTime.getMinutes();
+  if (currentMinutes < 10) {
+    currentMinutes = `0${currentMinutes}`;
+  }
+  return `${currentHour}:${currentMinutes}`;
 }
 
 document.querySelector(".dateTime").innerHTML = getDate(new Date());
@@ -60,11 +62,17 @@ function showInfo(response) {
   document.querySelector("#temperature").innerHTML = `${Math.round(
     response.data.main.temp
   )}°`;
-  fahrenheitTemperature = response.data.main.temp;
+
   document
     .querySelector("img")
     .setAttribute("src", `src/icons/${response.data.weather[0].icon}.png`);
-  document.querySelector(".uv") = response.data.main.uvi;
+  document.querySelector(".feels").innerHTML = `${Math.round(response.data.main.feels_like)}°`;
+  document.querySelector(".min").innerHTML = `${Math.round(response.data.main.temp_min)}°`;
+  document.querySelector(".max").innerHTML = `${Math.round(response.data.main.temp_max)}°`;
+  fahrenheitTemperature = response.data.main.temp;
+  minFahrenheitTemperature = response.data.main.temp_min
+  maxFahrenheitTemperature = response.data.main.temp_max
+
 }
 
 function search(city) {
@@ -118,6 +126,39 @@ function celsiusClick(event) {
 
 document.querySelector("#cel").addEventListener("click", celsiusClick);
 
+//min max temperature conversion current//
+let minFahrenheitTemperature = null;
+
+function minFahrenheitClick(event) {
+  event.preventDefault();
+  document.querySelector(".min").innerHTML = `${Math.round(minFahrenheitTemperature)}°`;
+}
+document.querySelector(".fmin").addEventListener("click", minFahrenheitClick);
+
+function minCelsiusClick(event) {
+  event.preventDefault();
+  let minCelsiusTemperature = (minFahrenheitTemperature - 32) * 5 / 9;
+  document.querySelector(".min").innerHTML = `${Math.round(minCelsiusTemperature)}°`;
+}
+
+document.querySelector(".cmin").addEventListener("click", minCelsiusClick);
+//max//
+
+let maxFahrenheitTemperature = null;
+
+function maxFahrenheitClick(event) {
+  event.preventDefault();
+  document.querySelector(".max").innerHTML = `${Math.round(maxFahrenheitTemperature)}°`;
+}
+document.querySelector(".fmax").addEventListener("click", maxFahrenheitClick);
+
+function maxCelsiusClick(event) {
+  event.preventDefault();
+  let maxCelsiusTemperature = (maxFahrenheitTemperature - 32) * 5 / 9;
+  document.querySelector(".max").innerHTML = `${Math.round(maxCelsiusTemperature)}°`;
+}
+
+document.querySelector(".cmax").addEventListener("click", maxCelsiusClick);
 
 //World cities//
 function showInfoCity(response) {
@@ -129,10 +170,17 @@ function showInfoCity(response) {
   document.querySelector("#temperature-2").innerHTML = `${Math.round(
     response.data.main.temp
   )}°`;
+
   fahrenheitTemperatureWorld = response.data.main.temp;
+  minFahrenheitTemperatureWorld = response.data.main.temp_min;
+  maxFahrenheitTemperatureWorld = response.data.main.temp_max;
   document
     .querySelector(".icon-2")
     .setAttribute("src", `src/icons/${response.data.weather[0].icon}.png`);
+  document.querySelector(".feelsWorld").innerHTML = `${Math.round(response.data.main.feels_like)}°`;
+  document.querySelector(".minworld").innerHTML = `${Math.round(response.data.main.temp_min)}°`;
+  document.querySelector(".maxworld").innerHTML = `${Math.round(response.data.main.temp_max)}°`;
+
 }
 
 function searchCity(city) {
@@ -208,42 +256,76 @@ function celsiusClickWorld(event) {
   let celsiusTemperatureWorld = (fahrenheitTemperatureWorld - 32) * 5 / 9;
   document.querySelector("#temperature-2").innerHTML = `${Math.round(celsiusTemperatureWorld)}°`;
 }
-
 document.querySelector("#cel-2").addEventListener("click", celsiusClickWorld);
+
+//temperature conversions min/max world //
+//min//
+let minFahrenheitTemperatureWorld = null;
+
+function minFahrenheitClickWorld(event) {
+  event.preventDefault();
+  document.querySelector(".minworld").innerHTML = `${Math.round(minFahrenheitTemperatureWorld)}°`;
+}
+document.querySelector(".fminworld").addEventListener("click", minFahrenheitClickWorld);
+
+function minCelsiusClickWorld(event) {
+  event.preventDefault();
+  let minCelsiusTemperatureWorld = (minFahrenheitTemperatureWorld - 32) * 5 / 9;
+  document.querySelector(".minworld").innerHTML = `${Math.round(minCelsiusTemperatureWorld)}°`;
+}
+
+document.querySelector(".cminworld").addEventListener("click", minCelsiusClickWorld);
+//max//
+
+let maxFahrenheitTemperatureWorld = null;
+
+function maxFahrenheitClickWorld(event) {
+  event.preventDefault();
+  document.querySelector(".maxworld").innerHTML = `${Math.round(maxFahrenheitTemperatureWorld)}°`;
+}
+document.querySelector(".fmaxworld").addEventListener("click", maxFahrenheitClickWorld);
+
+function maxCelsiusClickWorld(event) {
+  event.preventDefault();
+  let maxCelsiusTemperatureWorld = (maxFahrenheitTemperatureWorld - 32) * 5 / 9;
+  document.querySelector(".maxworld").innerHTML = `${Math.round(maxCelsiusTemperatureWorld)}°`;
+}
+
+document.querySelector(".cmaxworld").addEventListener("click", maxCelsiusClickWorld);
 
 //forecast//
 
+
 function formatForecastDay(timestamp) {
   let date = new Date(timestamp * 1000);
-  let day = date.getDay()
-  let day =[
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ];
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   return days[day];
 }
 
 function displayForecast(response) {
   let forecastHTML = `<div class="row week">`;
-  response.data.daily.forEach(function(forecastDay, index)) {
+  response.data.daily.forEach(function(forecastDay, index) {
     if (index < 6) {
-      forecastHTML +=
-        `<div class="col-sm day1"> ${formatForecastDay(forecastDay.dt)} <div class="col-sm "> ${Math.round(forecastDay.temp.max)}° <img class="day1 icon1" src="src/icons/${forecastDay.weather[0].icon}.png" alt="">
-        </div>
+      forecastHTML += `<div class="col-sm day1"> ${formatForecastDay(forecastDay.dt)}
+      <img class="day1 icon1" src="src/icons/${forecastDay.weather[0].icon}.png" alt="">
         </div>
         `;
-    }}}
-    document.querySelector(".weatherForecast").innerHTML = forecastHTML + `</div>`;
-
-
-    function getForecast(coordinates) {
-      console.log(coordinates);
-      let apiKey = "e76cd8c37745df31c6e794ca3e2defbc";
-      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
-      axios.get(apiUrl).then(displayForecast);
     }
+  });
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "e76cd8c37745df31c6e794ca3e2defbc";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
