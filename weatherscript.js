@@ -160,7 +160,51 @@ function maxCelsiusClick(event) {
 
 document.querySelector(".cmax").addEventListener("click", maxCelsiusClick);
 
+//forecast//
+
+
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecastHTML = `<div class="row week">`;
+  response.data.daily.forEach(function(forecastDay, index) {
+    if (index < 6) {
+      forecastHTML += `<div class="col-sm day1"> ${formatForecastDay(forecastDay.dt)}
+      <img class="day1 icon1" src="src/icons/${forecastDay.weather[0].icon}.png" alt="">
+        </div>
+        `;
+    }
+  });
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "e76cd8c37745df31c6e794ca3e2defbc";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+
+
+
+
+
 //World cities//
+
+
 function showInfoCity(response) {
   document.querySelector(".city-2").innerHTML = response.data.name;
   document.querySelector(".cloudy-2").innerHTML =
@@ -174,20 +218,21 @@ function showInfoCity(response) {
   fahrenheitTemperatureWorld = response.data.main.temp;
   minFahrenheitTemperatureWorld = response.data.main.temp_min;
   maxFahrenheitTemperatureWorld = response.data.main.temp_max;
+
   document
     .querySelector(".icon-2")
     .setAttribute("src", `src/icons/${response.data.weather[0].icon}.png`);
   document.querySelector(".feelsWorld").innerHTML = `${Math.round(response.data.main.feels_like)}°`;
   document.querySelector(".minworld").innerHTML = `${Math.round(response.data.main.temp_min)}°`;
-  document.querySelector(".maxworld").innerHTML = `${Math.round(response.data.main.temp_max)}°`;
+  document.querySelector(".maxworld").innerHTML = `${Math.round(response.data.main.temp_max)}°`;;
 
 }
 
 function searchCity(city) {
   let apiKey = "e76cd8c37745df31c6e794ca3e2defbc";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-  document.querySelector(".city-2").innerHTML = `${city}`
   axios.get(apiUrl).then(showInfoCity);
+
 }
 
 function isbClick(event) {
@@ -242,6 +287,10 @@ document.querySelector(".SEO").addEventListener("click", seoClick);
 
 searchCity("Dubai");
 
+
+
+
+
 //temperature conversion world//
 let fahrenheitTemperatureWorld = null;
 
@@ -293,39 +342,118 @@ function maxCelsiusClickWorld(event) {
 
 document.querySelector(".cmaxworld").addEventListener("click", maxCelsiusClickWorld);
 
-//forecast//
 
 
-function formatForecastDay(timestamp) {
-  let date = new Date(timestamp * 1000);
-  let day = date.getDay();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  return days[day];
-}
+//Random city//
 
-function displayForecast(response) {
-  let forecastHTML = `<div class="row week">`;
-  response.data.daily.forEach(function(forecastDay, index) {
-    if (index < 6) {
-      forecastHTML += `<div class="col-sm day1"> ${formatForecastDay(forecastDay.dt)}
-      <img class="day1 icon1" src="src/icons/${forecastDay.weather[0].icon}.png" alt="">
-        </div>
-        `;
+function getRandomCity() {
+  let number = Math.floor(Math.random() * 50)
+  if (number === 1) {
+    searchCity("San Diego");
+  } else if (number === 2) {
+    searchCity("Sydney");
+  } else if (number === 3) {
+    searchCity("Paris");
+  } else if (number === 4) {
+    searchCity("Moscow");
+  } else if (number === 5) {
+    searchCity("Barcelona");
+  } else if (number === 6) {
+    searchCity("Madrid");
+  } else if (number === 7) {
+    searchCity("Rome");
+  } else if (number === 8) {
+    searchCity("Chicago");
+  } else if (number === 9) {
+    searchCity("Abu Dhabi");
+  } else if (number === 10) {
+    searchCity("Amsterdam");
+  } else if (number === 11) {
+    searchCity("Toronto");
+  } else if (number === 12) {
+    searchCity("Berlin");
+  } else if (number === 13) {
+    searchCity("Las Vegas");
+  } else if (number === 14) {
+    searchCity("Rio de Janeiro");
+  } else if (number === 15) {
+    searchCity("Montego Bay");
+  } else if (number === 16) {
+    searchCity("Richmond");
+  } else if (number === 17) {
+    searchCity("Brooklyn");
+  } else if (number === 18) {
+    searchCity("Baltimore");
+  } else if (number === 19) {
+    searchCity("Miami");
+  } else if (number === 20) {
+    searchCity("Newark");
+  } else if (number === 21) {
+    searchCity("Delhi");
+  } else if (number === 22) {
+    searchCity("Shanghai");
+  } else if (number === 23) {
+    searchCity("Sao Paulo");
+  } else if (number === 24) {
+    searchCity("Dhaka");
+  } else if (number === 25) {
+    searchCity("Cairo");
+  } else if (number === 26) {
+    searchCity("Osaka");
+  } else if (number === 27) {
+    searchCity("Mumbai");
+  } else if (number === 28) {
+    searchCity("Karachi");
+  } else if (number === 29) {
+    searchCity("Chongqing");
+  } else if (number === 30) {
+    searchCity("Buenos Aires");
+  } else if (number === 31) {
+    searchCity("Kolkata");
+  } else if (number === 32) {
+    searchCity("Lagos");
+  } else if (number === 33) {
+    searchCity("Kinshasa");
+  } else if (number === 34) {
+    searchCity("Manila");
+  } else if (number === 35) {
+    searchCity("Tianjin");
+  } else if (number === 36) {
+    searchCity("Bangalore");
+  } else if (number === 37) {
+    searchCity("Lahore");
+  } else if (number === 38) {
+    searchCity("Bangkok");
+  } else if (number === 39) {
+    searchCity("Kuala Lumpur");
+  } else if (number === 40) {
+    searchCity("Antalya");
+  } else if (number === 41) {
+    searchCity("Dar es Salaam");
+  } else if (number === 42) {
+    searchCity("Belo Horizonte");
+  } else if (number === 43) {
+    searchCity("Lima");
+  } else if (number === 44) {
+    searchCity("Luanda");
+  } else if (number === 45) {
+    searchCity("Atlanta");
+  } else if (number === 46) {
+    searchCity("Yangon");
+  } else if (number === 47) {
+    searchCity("Detroit");
+  } else if (number === 48) {
+    searchCity("Memphis");
+  } else if (number === 49) {
+    searchCity("Wilmington");
+  } else if (number === 4) {
+    searchCity("Birmingham");
+  } else {
+    {
+      searchCity("Doha");
     }
-  });
+
+  }
 }
 
-function getForecast(coordinates) {
-  console.log(coordinates);
-  let apiKey = "e76cd8c37745df31c6e794ca3e2defbc";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
-  axios.get(apiUrl).then(displayForecast);
-}
+document.querySelector(".earth").addEventListener("click", getRandomCity);
