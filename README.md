@@ -11,7 +11,7 @@ This is an app I made using [Open Weather App](https://openweathermap.org/api/on
  
 
 ## Overview
-This app displays the weather in the user's current location, a location they've searched for, as well as the weather in 5+ random cities around the world!
+This app displays the weather in the user's current location, a location they've searched for, as well as the weather in 50+ random cities around the world!
 
 In order to make this something I'd love to use myself, I worked with various color palettes and tweaked the design until I found one that fit myself and my personality best. Yes, it's touché, but I love pink!
 
