@@ -160,7 +160,7 @@ function maxCelsiusClick(event) {
 
 document.querySelector(".cmax").addEventListener("click", maxCelsiusClick);
 
-//forecast//
+//forecast current//
 
 
 function formatForecastDay(timestamp) {
@@ -461,3 +461,5 @@ function getRandomCity() {
 }
 
 document.querySelector(".earth").addEventListener("click", getRandomCity);
+
+// Forecast World //
