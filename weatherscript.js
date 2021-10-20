@@ -490,7 +490,9 @@ function displayForecastWorld(response) {
       forecastHTMLWorld += `<div class="col-2">
         <img class="day1 icon1-2" src="src/icons/${
         forecastDayWorld.weather[0].icon
-      }.png" alt=""/>
+      }.png" title="${Math.round(
+        forecastDayWorld.temp.max
+      )}°"/>
         </div>`;
     }
   });
