@@ -62,6 +62,7 @@ function showInfo(response) {
   document.querySelector("#temperature").innerHTML = `${Math.round(
     response.data.main.temp
   )}°`;
+  getForecast(response.data.coord);
 
   document
     .querySelector("img")
@@ -70,8 +71,8 @@ function showInfo(response) {
   document.querySelector(".min").innerHTML = `${Math.round(response.data.main.temp_min)}°`;
   document.querySelector(".max").innerHTML = `${Math.round(response.data.main.temp_max)}°`;
   fahrenheitTemperature = response.data.main.temp;
-  minFahrenheitTemperature = response.data.main.temp_min
-  maxFahrenheitTemperature = response.data.main.temp_max
+  minFahrenheitTemperature = response.data.main.temp_min;
+  maxFahrenheitTemperature = response.data.main.temp_max;
 
 }
 
@@ -177,17 +178,20 @@ function formatForecastDay(timestamp) {
   ];
   return days[day];
 }
+
 function displayForecast(response) {
+  let forecastElement = document.querySelector(".weatherForecast");
   let forecastHTML = `<div class="row week">`;
-  response.data.daily.forEach(function (forecastDay, index) {
+  response.data.daily.forEach(function(forecastDay, index) {
     if (index < 6) {
       forecastHTML += `<div class="col-sm day1"> ${formatForecastDay(
         forecastDay.dt
-      )} <div class="col-sm "> ${Math.round(
-        forecastDay.temp.max
-      )}° <img class="day1 icon1" src="src/icons/${
+      )}  <img class="day1 icon1" src="src/icons/${
         forecastDay.weather[0].icon
       }.png" alt="">
+      <div class="col-sm "> ${Math.round(
+        forecastDay.temp.max
+      )}°
         </div>
         </div>
         `;
@@ -198,12 +202,12 @@ function displayForecast(response) {
 }
 
 
-  function getForecast(coordinates) {
-    console.log(coordinates);
-    let apiKey = "e76cd8c37745df31c6e794ca3e2defbc";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
-    axios.get(apiUrl).then(displayForecast);
-  }
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "e76cd8c37745df31c6e794ca3e2defbc";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 
 //World cities//
@@ -218,7 +222,6 @@ function showInfoCity(response) {
   document.querySelector("#temperature-2").innerHTML = `${Math.round(
     response.data.main.temp
   )}°`;
-
   fahrenheitTemperatureWorld = response.data.main.temp;
   minFahrenheitTemperatureWorld = response.data.main.temp_min;
   maxFahrenheitTemperatureWorld = response.data.main.temp_max;
@@ -228,8 +231,8 @@ function showInfoCity(response) {
     .setAttribute("src", `src/icons/${response.data.weather[0].icon}.png`);
   document.querySelector(".feelsWorld").innerHTML = `${Math.round(response.data.main.feels_like)}°`;
   document.querySelector(".minworld").innerHTML = `${Math.round(response.data.main.temp_min)}°`;
-  document.querySelector(".maxworld").innerHTML = `${Math.round(response.data.main.temp_max)}°`;;
-
+  document.querySelector(".maxworld").innerHTML = `${Math.round(response.data.main.temp_max)}°`;
+  getForecastWorld(response.data.coord);
 }
 
 function searchCity(city) {
@@ -463,3 +466,41 @@ function getRandomCity() {
 document.querySelector(".earth").addEventListener("click", getRandomCity);
 
 // Forecast World //
+
+function formatForecastDayWorld(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
+
+function displayForecastWorld(response) {
+  let forecastElementWorld = document.querySelector(".weatherForecast2");
+  let forecastHTMLWorld = `<div class="row week 2">`;
+  response.data.daily.forEach(function(forecastDayWorld, index) {
+    if (index < 6) {
+      forecastHTMLWorld += `<div class="col-2">
+        <img class="day1 icon1-2" src="src/icons/${
+        forecastDayWorld.weather[0].icon
+      }.png" alt=""/>
+        </div>`;
+    }
+  });
+  forecastHTMLWorld += "</div>";
+  forecastElementWorld.innerHTML = forecastHTMLWorld;
+}
+
+function getForecastWorld(coordinates) {
+  console.log(coordinates);
+  let apiKey = "e76cd8c37745df31c6e794ca3e2defbc";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecastWorld);
+}
