@@ -471,13 +471,13 @@ function formatForecastDayWorld(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
   ];
   return days[day];
 }
@@ -488,6 +488,10 @@ function displayForecastWorld(response) {
   response.data.daily.forEach(function(forecastDayWorld, index) {
     if (index < 6) {
       forecastHTMLWorld += `<div class="col-2">
+      ${formatForecastDayWorld(
+        forecastDayWorld.dt
+      )}
+      </br>
         <img class="day1 icon1-2" src="src/icons/${
         forecastDayWorld.weather[0].icon
       }.png" title="${Math.round(
