@@ -189,9 +189,9 @@ function displayForecast(response) {
       )}  <img class="day1 icon1" src="src/icons/${
         forecastDay.weather[0].icon
       }.png" alt="">
-      <div class="col-sm "> ${Math.round(
+      <div class="col-sm temp "> ${Math.round(
         forecastDay.temp.max
-      )}°
+      )}°F
         </div>
         </div>
         `;
