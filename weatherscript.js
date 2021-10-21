@@ -74,6 +74,7 @@ function showInfo(response) {
   minFahrenheitTemperature = response.data.main.temp_min;
   maxFahrenheitTemperature = response.data.main.temp_max;
 
+
 }
 
 function search(city) {
@@ -183,13 +184,17 @@ function displayForecast(response) {
   let forecastElement = document.querySelector(".weatherForecast");
   let forecastHTML = `<div class="row week">`;
   response.data.daily.forEach(function(forecastDay, index) {
-    if (index < 6) {
-      forecastHTML += `<div class="col-sm day1"> ${formatForecastDay(
+    if (index > 0 && index < 7) {
+      forecastHTML += `<div
+      class="col-sm day1"> ${formatForecastDay(
         forecastDay.dt
-      )}  <img class="day1 icon1" src="src/icons/${
+      )}  <img
+      class="day1 icon1"
+      src="src/icons/${
         forecastDay.weather[0].icon
       }.png" alt="">
-      <div class="col-sm temp "> ${Math.round(
+      <div
+      class="col-sm temp "> ${Math.round(
         forecastDay.temp.max
       )}°F
         </div>
@@ -486,17 +491,21 @@ function displayForecastWorld(response) {
   let forecastElementWorld = document.querySelector(".weatherForecast2");
   let forecastHTMLWorld = `<div class="row week 2">`;
   response.data.daily.forEach(function(forecastDayWorld, index) {
-    if (index < 6) {
-      forecastHTMLWorld += `<div class="col-2">
+    if (index > 0 && index < 7) {
+      forecastHTMLWorld += `<div
+      class="col-2 temp">
       ${formatForecastDayWorld(
         forecastDayWorld.dt
       )}
-      </br>
-        <img class="day1 icon1-2" src="src/icons/${
-        forecastDayWorld.weather[0].icon
-      }.png" title="${Math.round(
+      ${Math.round(
         forecastDayWorld.temp.max
-      )}°"/>
+      )}°F
+      </br>
+        <img
+        class="day1 icon1-2"
+        src="src/icons/${
+        forecastDayWorld.weather[0].icon
+      }.png">
         </div>`;
     }
   });
